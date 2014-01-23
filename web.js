@@ -10,3 +10,10 @@ var port = process.env.PORT || 5000;
 app.listen(port, function() {
   console.log("Listening on " + port);
 });
+
+
+
+app.get('/', function(req, res) {
+        fs.readFile('./templates/index.html', function(err, data) {
+                res.end(data);
+        })
