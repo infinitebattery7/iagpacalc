@@ -1,0 +1,33 @@
+[1mdiff --git a/web.js b/web.js[m
+[1mindex a6d5578..9a79bca 100644[m
+[1m--- a/web.js[m
+[1m+++ b/web.js[m
+[36m@@ -6,9 +6,13 @@[m [mvar app = express();[m
+ [m
+ app.use(express.logger());[m
+ [m
+[31m-app.get('/', function(request, response) {[m
+[31m-  response.send('Hello World!');[m
+[31m-});[m
+[32m+[m
+[32m+[m
+[32m+[m[32mapp.get('/', function(req, res) {[m
+[32m+[m[32m        fs.readFile('./templates/index.html', function(err, data) {[m
+[32m+[m[32m                res.end(data);[m
+[32m+[m[32m        })[m
+[32m+[m[41m		[m
+ [m
+ var port = process.env.PORT || 5000;[m
+ app.listen(port, function() {[m
+[36m@@ -16,8 +20,3 @@[m [mapp.listen(port, function() {[m
+ });[m
+ [m
+ [m
+[31m-[m
+[31m-app.get('/', function(req, res) {[m
+[31m-        fs.readFile('./templates/index.html', function(err, data) {[m
+[31m-                res.end(data);[m
+[31m-        })[m
+\ No newline at end of file[m
+warning: LF will be replaced by CRLF in web.js.
+The file will have its original line endings in your working directory.
