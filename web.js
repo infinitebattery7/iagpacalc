@@ -1,3 +1,4 @@
+
 var express = require('express');
 var http = require('http');
 var fs = require('fs');
@@ -79,12 +80,7 @@ app.post('/query', function(req, res) {
 
 var server = http.createServer(app);
 
-var port = process.env.PORT || 5000;
+server.listen(process.env.PORT || 1997);
 
-server.listen(process.env.PORT || 5000);
-
-app.listen(port, function() {
-  console.log("Listening on " + port);
-});
 
 
