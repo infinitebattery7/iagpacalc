@@ -1,9 +1,7 @@
 
 var express = require('express');
 var http = require('http');
-var fs = require('fs');
-var Twit = require('twit');
-var sentimental = require('Sentimental')
+
 
 var app = express();
 app.use(express.bodyParser());
